@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume</title>
+
+    <style>
+      .inl {
+        display: inline-block;
+      }
+      .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto auto auto auto;
+        grid-gap: 20px;
+        padding: 5px;
+      }
+
+      .grid-container > div {
+
+        padding: 20px 0;
+
+      }
+
+      .item1 {
+        grid-column: 1/3;
+        /* grid-row: 1; */
+      }
+      .item2 {
+        grid-column: 3/ 7;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 10px 26px;
+
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div style="margin-left: 160px; margin-right: 160px">
+      <h1 style="text-align: center"><b> Resume</b></h1>
+
+      <div class="grid-container">
+        <div class="item1">
+          <h1>Akash Paliwal</h1>
+          <address>
+            200/3, Nehru Nagar Indore <br />PIN - 461228 <br />Email -
+            akash9861@gmail.com <br />
+            Mob- 7566387259
+          </address>
+
+          <h3>Skills</h3>
+          <h4>Language and Frameworks</h4>
+          <ul>
+            <li>C++</li>
+            <li>Java</li>
+            <li>Python</li>
+            <li>Advanced Java</li>
+            <li>Django</li>
+          </ul>
+          <h4>Concepts</h4>
+
+          <ul>
+            <li>MySQL</li>
+            <li>Data Structures</li>
+            <li>Operating System</li>
+          </ul>
+          <h4>Achievements</h4>
+          <ul>
+            <li>AIR- 55 in NIMCET</li>
+            <li>AIR - 23 in BHU MCA</li>
+            <li>AIR - 119 in BIT MCA</li>
+          </ul>
+        </div>
+
+        <div class="item2">
+          <img
+            style="height: 160px; float: right"
+            src="https://in.bmscdn.com/iedb/artist/images/website/poster/large/ranbir-kapoor-2817-14-09-2017-01-46-00.jpg"
+            alt="Profile pic"
+          />
+          <h3 class="inl">Objective</h3>
+
+
+          <p class="inl" style="width: 70%">
+            Looking for a challenging opportunity which demands the best of my
+            professional ability in terms of technical and analytical skills.
+          </p>
+
+          <br />
+          <h3>Education</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Qualification</th>
+                <th>School/College</th>
+                <th>Year of Passing</th>
+                <th>Percentage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>MCA</td>
+                <td>
+                  <a href="https://www.bitmesra.ac.in/" target="_blank">
+                    Birla Institute of Technology, MESRA
+                  </a>
+                </td>
+                <td>2021</td>
+                <td>9.0</td>
+              </tr>
+              <tr>
+                <td>BSc</td>
+
+                <td>
+                  <a href="https://collegeholkar.org/" target="_blank"
+                    >Govt. Holkar Science College ,Indore
+                  </a>
+                </td>
+                <td>2018</td>
+                <td>59</td>
+              </tr>
+              <tr>
+                <td>XII</td>
+                <td>
+                  <a href="http://saraswatividyamandir.org/" target="_blank">
+                    Saraswati vidya Mandir Timarni
+                  </a>
+                </td>
+                <td>2014</td>
+                <td>88.2</td>
+              </tr>
+              <tr>
+                <td>X</td>
+                <td>
+                  <a href="http://saraswatividyamandir.org/" target="_blank">
+                    Saraswati vidya Mandir Timarni
+                  </a>
+                </td>
+                <td>2012</td>
+                <td>78</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Projects</h3>
+          <ul>
+            <li>
+              <a href="http://bakedbyheart.herokuapp.com/" target="_blank">
+                Baked By Heart
+              </a>
+            </li>
+            <p style="text-align: justify">
+              It’s a cake website developed for a bakery. It was my first
+              experience dealing with a client. As per Client’s requirements I
+              developed a simple and light weighted front end because he wants
+              this to be deployed for free. I used mainly bootstrap 4 along with
+              HTML and CSS and a bit JQuery for the frontend, Django for forms
+              and Backend, Sqlite 3 for database. I Integrated PayU money as a
+              payment gateway and deployed the website on Herokuapp. This WebApp
+              is developed using Django Framework.
+            </p>
+            <li>Simple GUI Applications</li>
+            <p>
+              1. Text File Viewer – The purpose of this GUI app is to display
+              text of any text file in its editor. Text size can be changed
+              using slider and text case can also be changed.<br /><br />
+              2. Age Calculator - This is the simple GUI app used to calculate
+              age by entering DOB. These GUI Apps are developed in Swing
+              Framework.
+            </p>
+          </ul>
+            <br>
+            <form action="">
+                <input type="checkbox" name="agree" id="agree">
+                <label for="agree"><b>I hereby declare that the information furnished above is true, complete and correct to the best of my knowledge.<b></label>
+
+            </form>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+

@@ -1,0 +1,771 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap");
+$border-color: lightgray;
+$bg-color: #fafbff;
+$font-color: #012970;
+@mixin all {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+@mixin width-height($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin margin($t, $r, $b, $l) {
+  margin: $t $r $b $l;
+}
+
+@mixin font-color-size-weight($color: initial, $size: medium, $weight: normal) {
+  color: $color;
+  font-size: $size;
+  font-weight: $weight;
+}
+@mixin bg-img($path) {
+  background-image: url($path);
+}
+@mixin pos-top-left($pos, $top, $left) {
+  position: $pos;
+  top: $top;
+  left: $left;
+}
+
+@mixin padding-ii($tb, $lr) {
+  padding: $tb $lr;
+}
+@mixin padding-iv($t, $r, $b, $l) {
+  padding: $t $r $b $l;
+}
+
+@mixin float($value) {
+  float: $value;
+}
+
+@mixin text-center {
+  text-align: center;
+}
+
+@mixin clrfix {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+@mixin font-w700 {
+  font-weight: 700;
+}
+@mixin bg-rep-pos($rep, $pos) {
+  background-repeat: $rep;
+  background-position: $pos;
+}
+
+body {
+  @include all;
+}
+.inlb {
+  display: inline-block;
+}
+.main {
+  height: auto;
+  background-size: cover;
+}
+.main-bg-img {
+  @include bg-img("./../img/hero-bg.png");
+}
+
+.heroimg {
+  display: inline-block;
+  width: 50%;
+}
+.div-main-quote {
+  display: inline-block;
+  margin: 90px 0 0 70px;
+  padding-bottom: 115px;
+  @include width-height(42%, auto);
+  .p1 {
+    @include font-color-size-weight($font-color, 48px, 700);
+    margin-bottom: 0;
+    line-height: 57px;
+  }
+  .p2 {
+    @include font-color-size-weight(#444444, 26px, 500);
+  }
+}
+
+.btn {
+  @include font-color-size-weight(white, 16px, 700);
+  background-color: rgb(65, 85, 241);
+  @include padding-ii(15px, 40px);
+  text-decoration: none;
+  border-radius: 4px;
+  box-shadow: 0px 5px 19px rgba(65, 84, 241, 0.4);
+}
+
+.togglebar {
+  display: none;
+}
+.navbar {
+  @include font-w700();
+  @include pos-top-left(relative, auto, 140px);
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+  padding-top: 23px;
+  margin-right: 90px;
+  overflow: hidden;
+
+  li {
+    @include float(left);
+    a {
+      @include text-center();
+      display: block;
+      color: #013289;
+      padding: 8px 18px;
+      text-decoration: none;
+    }
+    #active {
+      color: #4154f1;
+    }
+  }
+}
+
+#getstart {
+  background-color: rgb(65, 85, 241);
+  @include font-color-size-weight(white, 16px, normal);
+  border-radius: 4px;
+  margin-left: 13px;
+}
+#getstart:hover {
+  background-color: rgba(65, 85, 241, 0.85);
+}
+
+.logo {
+  display: inline-block;
+  @include pos-top-left(relative, -9px, 60px);
+  @include font-color-size-weight(initial, 30px, 700);
+}
+
+.aboutus {
+  @include margin(60px, auto, 100px, auto);
+  .abtdiv {
+    @include float(left);
+    background-color: #f6f9ff;
+    @include padding-iv(0, 40px, 41px, 40px);
+    @include margin(27px, auto, auto, 72px);
+    width: 38%;
+    .btndiv {
+      .bt {
+        font-style: 14px;
+        @include font-w700();
+        color: white;
+      }
+    }
+  }
+  .aboutimg {
+    width: 560px;
+    height: 420px;
+    margin-right: 72px;
+    @include float(right);
+  }
+}
+.aboutus::after {
+  @include clrfix();
+}
+.our-values {
+  @include margin(143px, auto, 70px, auto);
+  .headh3 {
+    @include text-center();
+    @include font-color-size-weight(#4154f1, 13px, 700);
+  }
+  .headh1 {
+    @include text-center();
+    @include font-color-size-weight(initial, 35px, 700);
+    @include font-w700();
+  }
+  .card-container {
+    padding-left: 100px;
+    .cards {
+      box-shadow: 0px 2px 13px rgba(65, 84, 241, 0.08);
+      @include float(left);
+      width: 25%;
+      padding: 25px;
+      margin: 10px;
+      .cardimg {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto;
+      }
+      .cardhead {
+        color: $font-color;
+        @include text-center();
+      }
+      .cardpara {
+        @include text-center();
+        font-weight: 400;
+      }
+    }
+    .pd1 {
+      padding-bottom: 57px;
+    }
+  }
+  .card-container::after {
+    @include clrfix();
+  }
+}
+
+.statistics {
+  margin-bottom: 75px;
+
+  .sm-cards {
+    padding-left: 75px;
+    .cardsdiv {
+      box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
+      @include float(left);
+      position: relative;
+      width: 200px;
+      height: auto;
+      margin: 0 12px;
+      padding: 4px 30px;
+      .cardimg {
+        position: absolute;
+        vertical-align: text-bottom;
+        margin: 43px 0 0 2px;
+        padding-right: 16px;
+        height: 40px;
+      }
+      .cardh1 {
+        font-size: 36px;
+        color: #0b198f;
+        @include text-center();
+        margin-right: 10px;
+      }
+      .cardp {
+        @include text-center();
+      }
+    }
+  }
+  ::after {
+    @include clrfix();
+  }
+}
+
+.features {
+  .featureh3 {
+    @include text-center();
+    color: #4154f1;
+    font-size: 13px;
+    font-style: italic;
+    line-height: 0;
+  }
+  .featureh1 {
+    font-size: 38px;
+    @include text-center();
+    @include font-w700();
+    line-height: 1;
+  }
+  .features-div {
+    padding-bottom: 56px;
+    img {
+      @include float(left);
+      width: 550px;
+      height: 340px;
+      margin-left: 55px;
+    }
+  }
+
+  ::after {
+    @include clrfix();
+  }
+}
+
+.features-card {
+  @include float(right);
+  width: 45%;
+  margin-right: 44px;
+  div {
+    display: inline-block;
+    box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
+    position: relative;
+    margin: 12px;
+    width: 250px;
+    height: 80px;
+    i {
+      position: absolute;
+      border-radius: 3px;
+      margin: 20px 0 0 20px;
+      padding: 4px 10px 4px 8px;
+      background-color: #ecf3ff;
+    }
+    h3 {
+      @include font-color-size-weight($font-color, normal, 700);
+      margin-left: 61px;
+      line-height: 2;
+    }
+  }
+}
+
+.contact-form {
+  @include float(right);
+  width: 45%;
+  margin-top: 12px;
+  background-color: $bg-color;
+}
+.contact {
+  margin-bottom: 32px;
+
+  .contacth3 {
+    @include text-center();
+    line-height: 0;
+    font-size: 13px;
+    color: #4154f1;
+  }
+  .contacth1 {
+    @include text-center();
+    line-height: 0;
+    @include font-color-size-weight(initial, 38px, 700);
+  }
+  .contact-cards {
+    @include float(left);
+    width: 47%;
+    margin-left: 50px;
+    .contactcardsdiv {
+      @include float(left);
+      width: 220px;
+      background-color: $bg-color;
+      padding: 27px 17px 30px 28px;
+      margin: 13px;
+      :nth-child(3) {
+        line-height: 0.5;
+      }
+      :first-child {
+        @include width-height(25px, 25px);
+      }
+    }
+  }
+
+  ::after {
+    @include clrfix();
+  }
+}
+
+.contact-form {
+  .textinput {
+    width: 39%;
+    border: 1px solid $border-color;
+    padding: 13px;
+    margin: 10px;
+  }
+  .form {
+    padding: 12px;
+    .subject {
+      width: 87.7%;
+    }
+    .message {
+      display: block;
+      width: 87.7%;
+      height: 200px;
+      padding: 13px;
+      border: 1px solid $border-color;
+      margin-left: 10px;
+      margin-top: 10px;
+      resize: vertical;
+    }
+    .submit {
+      box-shadow: none;
+      margin: 12px 181px 0;
+    }
+  }
+}
+
+.footer {
+  @include text-center();
+  color: $font-color;
+  padding: 5px;
+  background-color: $bg-color;
+  :first-child {
+    line-height: 0;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .togglebar {
+    display: inline-block;
+    float: right;
+    margin: 10px;
+  }
+  .navbar {
+    display: none;
+    left: 0;
+
+    li {
+      float: none;
+      width: 60%;
+      padding: 3px 0;
+    }
+  }
+
+  .togglebar:hover + .navbar {
+    padding-left: 0;
+    display: block;
+    background-color: white;
+    border-radius: 16px;
+    margin: 0 10px;
+    text-align: left;
+  }
+  .main-bg-img {
+    background-position-x: center;
+
+    background-repeat: no-repeat;
+  }
+
+  .logo {
+    top: 5px;
+    left: 13px;
+  }
+
+  .getstartbtn {
+    text-align: center;
+  }
+
+  .div-main-quote {
+    display: block;
+    width: auto;
+    margin: auto;
+    margin-top: 60px;
+    .p1 {
+      font-size: 32px;
+      text-align: center;
+      line-height: 1;
+      padding-bottom: 5px;
+    }
+    .p2 {
+      text-align: center;
+      font-size: 24px;
+      text-align: center;
+      padding: 25px;
+      margin-top: 0;
+      padding-top: 0;
+    }
+  }
+
+  .heroimg {
+    display: block;
+    width: auto;
+    margin-top: 20px;
+    img {
+      width: 100%;
+    }
+  }
+
+  .aboutus {
+    text-align: center;
+    margin: 0 auto;
+    .abtdiv {
+      @include float(none);
+      text-align: left;
+      padding: 30px;
+      width: 79%;
+      margin: 60px auto;
+      margin-bottom: 0;
+    }
+    .aboutimg {
+      @include float(none);
+      width: 95%;
+      margin: 0 auto;
+    }
+  }
+  .our-values {
+    margin-top: 40px;
+    .headh1 {
+      font-size: 28px;
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+  .our-values .card-container {
+    padding-left: 0;
+  }
+
+  .our-values .card-container .cards {
+    @include float(none);
+    width: 80%;
+    margin: 25px auto;
+  }
+  .statistics {
+    .sm-cards {
+      width: 94%;
+      margin: auto;
+      padding: 0;
+      padding-left: 4px;
+      .cardsdiv {
+        @include float(none);
+        width: auto;
+        margin: 30px auto;
+        padding: 8px;
+        .cardimg {
+          margin-left: 10px;
+        }
+        .cardh1 {
+          padding-left: 71px;
+          text-align: initial;
+        }
+        .cardp {
+          text-align: initial;
+          padding-left: 74px;
+        }
+      }
+    }
+  }
+
+  .features {
+    width: 100%;
+    margin: 0 auto;
+    .featureh1 {
+      font-size: 28px;
+    }
+    .features-div {
+      img {
+        @include float(none);
+        @include width-height(100%, 340px);
+        margin-left: 0;
+      }
+    }
+  }
+  .features-card {
+    @include float(none);
+    width: 94%;
+    margin: auto;
+
+    div {
+      @include width-height(100%, auto);
+      margin: 10px auto;
+      h3 {
+        margin: 20px 70px;
+      }
+    }
+  }
+
+  .contact-form {
+    width: 94%;
+    @include float(none);
+    margin: 12px auto;
+    .form {
+      padding: 20px;
+      .submit {
+        display: block;
+        margin: auto;
+      }
+    }
+
+    .textinput,
+    .form .subject,
+    .form .message {
+      width: 85%;
+    }
+  }
+
+  .contact {
+    .contact-cards {
+      @include float(none);
+      width: 94%;
+      margin: auto;
+      .contactcardsdiv {
+        @include float(none);
+        width: auto;
+        margin: 13px auto;
+        padding: 30px;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .togglebar {
+    display: inline-block;
+    float: right;
+    margin: 10px;
+  }
+  .navbar {
+    display: none;
+    li {
+      float: none;
+      width: 40%;
+      padding: 3px 0;
+    }
+  }
+
+  .togglebar:hover + .navbar {
+    padding-left: 0;
+    display: block;
+    background-color: white;
+    border-radius: 16px;
+    margin: 0 10px;
+    text-align: left;
+  }
+  .main-bg-img {
+    background-position-x: center;
+    background-repeat: no-repeat;
+  }
+
+  .logo {
+    top: 5px;
+    left: 13px;
+  }
+  .navbar {
+    left: 0;
+    margin-right: 0;
+    padding-right: 0px;
+  }
+  .getstartbtn {
+    text-align: center;
+  }
+
+  .div-main-quote {
+    display: block;
+    width: 80%;
+    padding-top: 48px;
+    margin: auto;
+    text-align: center;
+    .p1 {
+      font-size: 32px;
+      line-height: 1;
+    }
+  }
+
+  .heroimg {
+    display: block;
+    width: auto;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .aboutus {
+    text-align: center;
+    margin: 0 auto;
+    .abtdiv {
+      @include float(none);
+      text-align: left;
+      padding: 40px;
+      width: 85%;
+      margin: 60px auto;
+      margin-bottom: 0;
+      :first-child,
+      :nth-child(2),
+      :nth-child(3) {
+        text-align: left;
+      }
+    }
+    .aboutimg {
+      @include float(none);
+      width: 95%;
+      margin: 0 auto;
+    }
+  }
+
+  .our-values {
+    margin-top: 40px;
+    .headh1 {
+      font-size: 28px;
+      line-height: 32px;
+      width: 90%;
+      margin: 0 auto;
+    }
+    .card-container {
+      padding-left: 0;
+      .cards {
+        @include float(none);
+        width: 88%;
+        margin: auto;
+        //margin-left: 38px;
+      }
+    }
+  }
+
+  .statistics {
+    .sm-cards {
+      width: 100%;
+      margin: auto;
+      padding: 0;
+      .cardsdiv {
+        padding: 5px;
+        margin: 10px 13px;
+        width: 45%;
+        .cardimg {
+          margin-left: 10px;
+        }
+        .cardh1 {
+          padding-left: 71px;
+          text-align: initial;
+        }
+        .cardp {
+          text-align: initial;
+          padding-left: 74px;
+        }
+      }
+    }
+  }
+
+  .features {
+    width: auto;
+    margin: 0 auto;
+
+    .featureh1 {
+      font-size: 32px;
+    }
+    .features-div {
+      padding-bottom: 0;
+      img {
+        @include float(none);
+        @include width-height(100%, 423px);
+        margin: 0px auto;
+      }
+    }
+  }
+  .features-card {
+    width: 95%;
+    @include float(none);
+    margin: auto;
+
+    div {
+      @include width-height(50%, auto);
+      @include float(left);
+      padding: 0;
+      margin: 10px auto;
+    }
+  }
+
+  .contact {
+    margin: 70px 0;
+    .contact-cards {
+      @include float(none);
+      width: 100%;
+      margin: 0 auto;
+      .contactcardsdiv {
+        width: 38%;
+        padding: 30px;
+      }
+    }
+    .contact-cards::after {
+      @include clrfix();
+    }
+  }
+
+  .contact-form {
+    width: 94%;
+    @include float(none);
+    margin: 0 auto;
+    .form {
+      margin-left: 32px;
+      .submit {
+        margin: 0 33%;
+      }
+    }
+    .textinput {
+      width: 40%;
+      margin-left: 8px;
+    }
+  }
+}

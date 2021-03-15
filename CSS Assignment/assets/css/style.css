@@ -1,0 +1,607 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif; }
+
+.inlb {
+  display: inline-block; }
+
+.main {
+  height: auto;
+  background-size: cover; }
+
+.main-bg-img {
+  background-image: url("./../img/hero-bg.png"); }
+
+.heroimg {
+  display: inline-block;
+  width: 50%; }
+
+.div-main-quote {
+  display: inline-block;
+  margin: 90px 0 0 70px;
+  padding-bottom: 115px;
+  width: 42%;
+  height: auto; }
+  .div-main-quote .p1 {
+    color: #012970;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 0;
+    line-height: 57px; }
+  .div-main-quote .p2 {
+    color: #444444;
+    font-size: 26px;
+    font-weight: 500; }
+
+.btn {
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: #4155f1;
+  padding: 15px 40px;
+  text-decoration: none;
+  border-radius: 4px;
+  box-shadow: 0px 5px 19px rgba(65, 84, 241, 0.4); }
+
+.togglebar {
+  display: none; }
+
+.navbar {
+  font-weight: 700;
+  position: relative;
+  top: auto;
+  left: 140px;
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+  padding-top: 23px;
+  margin-right: 90px;
+  overflow: hidden; }
+  .navbar li {
+    float: left; }
+    .navbar li a {
+      text-align: center;
+      display: block;
+      color: #013289;
+      padding: 8px 18px;
+      text-decoration: none; }
+    .navbar li #active {
+      color: #4154f1; }
+
+#getstart {
+  background-color: #4155f1;
+  color: white;
+  font-size: 16px;
+  font-weight: normal;
+  border-radius: 4px;
+  margin-left: 13px; }
+
+#getstart:hover {
+  background-color: rgba(65, 85, 241, 0.85); }
+
+.logo {
+  display: inline-block;
+  position: relative;
+  top: -9px;
+  left: 60px;
+  color: initial;
+  font-size: 30px;
+  font-weight: 700; }
+
+.aboutus {
+  margin: 60px auto 100px auto; }
+  .aboutus .abtdiv {
+    float: left;
+    background-color: #f6f9ff;
+    padding: 0 40px 41px 40px;
+    margin: 27px auto auto 72px;
+    width: 38%; }
+    .aboutus .abtdiv .btndiv .bt {
+      font-style: 14px;
+      font-weight: 700;
+      color: white; }
+  .aboutus .aboutimg {
+    width: 560px;
+    height: 420px;
+    margin-right: 72px;
+    float: right; }
+
+.aboutus::after {
+  content: "";
+  display: block;
+  clear: both; }
+
+.our-values {
+  margin: 143px auto 70px auto; }
+  .our-values .headh3 {
+    text-align: center;
+    color: #4154f1;
+    font-size: 13px;
+    font-weight: 700; }
+  .our-values .headh1 {
+    text-align: center;
+    color: initial;
+    font-size: 35px;
+    font-weight: 700;
+    font-weight: 700; }
+  .our-values .card-container {
+    padding-left: 100px; }
+    .our-values .card-container .cards {
+      box-shadow: 0px 2px 13px rgba(65, 84, 241, 0.08);
+      float: left;
+      width: 25%;
+      padding: 25px;
+      margin: 10px; }
+      .our-values .card-container .cards .cardimg {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto; }
+      .our-values .card-container .cards .cardhead {
+        color: #012970;
+        text-align: center; }
+      .our-values .card-container .cards .cardpara {
+        text-align: center;
+        font-weight: 400; }
+    .our-values .card-container .pd1 {
+      padding-bottom: 57px; }
+  .our-values .card-container::after {
+    content: "";
+    display: block;
+    clear: both; }
+
+.statistics {
+  margin-bottom: 75px; }
+  .statistics .sm-cards {
+    padding-left: 75px; }
+    .statistics .sm-cards .cardsdiv {
+      box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
+      float: left;
+      position: relative;
+      width: 200px;
+      height: auto;
+      margin: 0 12px;
+      padding: 4px 30px; }
+      .statistics .sm-cards .cardsdiv .cardimg {
+        position: absolute;
+        vertical-align: text-bottom;
+        margin: 43px 0 0 2px;
+        padding-right: 16px;
+        height: 40px; }
+      .statistics .sm-cards .cardsdiv .cardh1 {
+        font-size: 36px;
+        color: #0b198f;
+        text-align: center;
+        margin-right: 10px; }
+      .statistics .sm-cards .cardsdiv .cardp {
+        text-align: center; }
+  .statistics ::after {
+    content: "";
+    display: block;
+    clear: both; }
+
+.features .featureh3 {
+  text-align: center;
+  color: #4154f1;
+  font-size: 13px;
+  font-style: italic;
+  line-height: 0; }
+.features .featureh1 {
+  font-size: 38px;
+  text-align: center;
+  font-weight: 700;
+  line-height: 1; }
+.features .features-div {
+  padding-bottom: 56px; }
+  .features .features-div img {
+    float: left;
+    width: 550px;
+    height: 340px;
+    margin-left: 55px; }
+.features ::after {
+  content: "";
+  display: block;
+  clear: both; }
+
+.features-card {
+  float: right;
+  width: 45%;
+  margin-right: 44px; }
+  .features-card div {
+    display: inline-block;
+    box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
+    position: relative;
+    margin: 12px;
+    width: 250px;
+    height: 80px; }
+    .features-card div i {
+      position: absolute;
+      border-radius: 3px;
+      margin: 20px 0 0 20px;
+      padding: 4px 10px 4px 8px;
+      background-color: #ecf3ff; }
+    .features-card div h3 {
+      color: #012970;
+      font-size: normal;
+      font-weight: 700;
+      margin-left: 61px;
+      line-height: 2; }
+
+.contact-form {
+  float: right;
+  width: 45%;
+  margin-top: 12px;
+  background-color: #fafbff; }
+
+.contact {
+  margin-bottom: 32px; }
+  .contact .contacth3 {
+    text-align: center;
+    line-height: 0;
+    font-size: 13px;
+    color: #4154f1; }
+  .contact .contacth1 {
+    text-align: center;
+    line-height: 0;
+    color: initial;
+    font-size: 38px;
+    font-weight: 700; }
+  .contact .contact-cards {
+    float: left;
+    width: 47%;
+    margin-left: 50px; }
+    .contact .contact-cards .contactcardsdiv {
+      float: left;
+      width: 220px;
+      background-color: #fafbff;
+      padding: 27px 17px 30px 28px;
+      margin: 13px; }
+      .contact .contact-cards .contactcardsdiv :nth-child(3) {
+        line-height: 0.5; }
+      .contact .contact-cards .contactcardsdiv :first-child {
+        width: 25px;
+        height: 25px; }
+  .contact ::after {
+    content: "";
+    display: block;
+    clear: both; }
+
+.contact-form .textinput {
+  width: 39%;
+  border: 1px solid lightgray;
+  padding: 13px;
+  margin: 10px; }
+.contact-form .form {
+  padding: 12px; }
+  .contact-form .form .subject {
+    width: 87.7%; }
+  .contact-form .form .message {
+    display: block;
+    width: 87.7%;
+    height: 200px;
+    padding: 13px;
+    border: 1px solid lightgray;
+    margin-left: 10px;
+    margin-top: 10px;
+    resize: vertical; }
+  .contact-form .form .submit {
+    box-shadow: none;
+    margin: 12px 181px 0; }
+
+.footer {
+  text-align: center;
+  color: #012970;
+  padding: 5px;
+  background-color: #fafbff; }
+  .footer :first-child {
+    line-height: 0; }
+
+@media screen and (max-width: 470px) {
+  .togglebar {
+    display: inline-block;
+    float: right;
+    margin: 10px; }
+
+  .navbar {
+    display: none;
+    left: 0; }
+    .navbar li {
+      float: none;
+      width: 60%;
+      padding: 3px 0; }
+
+  .togglebar:hover + .navbar {
+    padding-left: 0;
+    display: block;
+    background-color: white;
+    border-radius: 16px;
+    margin: 0 10px;
+    text-align: left; }
+
+  .main-bg-img {
+    background-position-x: center;
+    background-repeat: no-repeat; }
+
+  .logo {
+    top: 5px;
+    left: 13px; }
+
+  .getstartbtn {
+    text-align: center; }
+
+  .div-main-quote {
+    display: block;
+    width: auto;
+    margin: auto;
+    margin-top: 60px; }
+    .div-main-quote .p1 {
+      font-size: 32px;
+      text-align: center;
+      line-height: 1;
+      padding-bottom: 5px; }
+    .div-main-quote .p2 {
+      text-align: center;
+      font-size: 24px;
+      text-align: center;
+      padding: 25px;
+      margin-top: 0;
+      padding-top: 0; }
+
+  .heroimg {
+    display: block;
+    width: auto;
+    margin-top: 20px; }
+    .heroimg img {
+      width: 100%; }
+
+  .aboutus {
+    text-align: center;
+    margin: 0 auto; }
+    .aboutus .abtdiv {
+      float: none;
+      text-align: left;
+      padding: 30px;
+      width: 79%;
+      margin: 60px auto;
+      margin-bottom: 0; }
+    .aboutus .aboutimg {
+      float: none;
+      width: 95%;
+      margin: 0 auto; }
+
+  .our-values {
+    margin-top: 40px; }
+    .our-values .headh1 {
+      font-size: 28px;
+      width: 90%;
+      margin: 0 auto; }
+
+  .our-values .card-container {
+    padding-left: 0; }
+
+  .our-values .card-container .cards {
+    float: none;
+    width: 80%;
+    margin: 25px auto; }
+
+  .statistics .sm-cards {
+    width: 94%;
+    margin: auto;
+    padding: 0;
+    padding-left: 4px; }
+    .statistics .sm-cards .cardsdiv {
+      float: none;
+      width: auto;
+      margin: 30px auto;
+      padding: 8px; }
+      .statistics .sm-cards .cardsdiv .cardimg {
+        margin-left: 10px; }
+      .statistics .sm-cards .cardsdiv .cardh1 {
+        padding-left: 71px;
+        text-align: initial; }
+      .statistics .sm-cards .cardsdiv .cardp {
+        text-align: initial;
+        padding-left: 74px; }
+
+  .features {
+    width: 100%;
+    margin: 0 auto; }
+    .features .featureh1 {
+      font-size: 28px; }
+    .features .features-div img {
+      float: none;
+      width: 100%;
+      height: 340px;
+      margin-left: 0; }
+
+  .features-card {
+    float: none;
+    width: 94%;
+    margin: auto; }
+    .features-card div {
+      width: 100%;
+      height: auto;
+      margin: 10px auto; }
+      .features-card div h3 {
+        margin: 20px 70px; }
+
+  .contact-form {
+    width: 94%;
+    float: none;
+    margin: 12px auto; }
+    .contact-form .form {
+      padding: 20px; }
+      .contact-form .form .submit {
+        display: block;
+        margin: auto; }
+    .contact-form .textinput,
+    .contact-form .form .subject,
+    .contact-form .form .message {
+      width: 85%; }
+
+  .contact .contact-cards {
+    float: none;
+    width: 94%;
+    margin: auto; }
+    .contact .contact-cards .contactcardsdiv {
+      float: none;
+      width: auto;
+      margin: 13px auto;
+      padding: 30px; } }
+@media (min-width: 768px) and (max-width: 1024px) {
+  .togglebar {
+    display: inline-block;
+    float: right;
+    margin: 10px; }
+
+  .navbar {
+    display: none; }
+    .navbar li {
+      float: none;
+      width: 40%;
+      padding: 3px 0; }
+
+  .togglebar:hover + .navbar {
+    padding-left: 0;
+    display: block;
+    background-color: white;
+    border-radius: 16px;
+    margin: 0 10px;
+    text-align: left; }
+
+  .main-bg-img {
+    background-position-x: center;
+    background-repeat: no-repeat; }
+
+  .logo {
+    top: 5px;
+    left: 13px; }
+
+  .navbar {
+    left: 0;
+    margin-right: 0;
+    padding-right: 0px; }
+
+  .getstartbtn {
+    text-align: center; }
+
+  .div-main-quote {
+    display: block;
+    width: 80%;
+    padding-top: 48px;
+    margin: auto;
+    text-align: center; }
+    .div-main-quote .p1 {
+      font-size: 32px;
+      line-height: 1; }
+
+  .heroimg {
+    display: block;
+    width: auto;
+    margin-top: 20px;
+    text-align: center; }
+
+  .aboutus {
+    text-align: center;
+    margin: 0 auto; }
+    .aboutus .abtdiv {
+      float: none;
+      text-align: left;
+      padding: 40px;
+      width: 85%;
+      margin: 60px auto;
+      margin-bottom: 0; }
+      .aboutus .abtdiv :first-child,
+      .aboutus .abtdiv :nth-child(2),
+      .aboutus .abtdiv :nth-child(3) {
+        text-align: left; }
+    .aboutus .aboutimg {
+      float: none;
+      width: 95%;
+      margin: 0 auto; }
+
+  .our-values {
+    margin-top: 40px; }
+    .our-values .headh1 {
+      font-size: 28px;
+      line-height: 32px;
+      width: 90%;
+      margin: 0 auto; }
+    .our-values .card-container {
+      padding-left: 0; }
+      .our-values .card-container .cards {
+        float: none;
+        width: 88%;
+        margin: auto; }
+
+  .statistics .sm-cards {
+    width: 100%;
+    margin: auto;
+    padding: 0; }
+    .statistics .sm-cards .cardsdiv {
+      padding: 5px;
+      margin: 10px 13px;
+      width: 45%; }
+      .statistics .sm-cards .cardsdiv .cardimg {
+        margin-left: 10px; }
+      .statistics .sm-cards .cardsdiv .cardh1 {
+        padding-left: 71px;
+        text-align: initial; }
+      .statistics .sm-cards .cardsdiv .cardp {
+        text-align: initial;
+        padding-left: 74px; }
+
+  .features {
+    width: auto;
+    margin: 0 auto; }
+    .features .featureh1 {
+      font-size: 32px; }
+    .features .features-div {
+      padding-bottom: 0; }
+      .features .features-div img {
+        float: none;
+        width: 100%;
+        height: 423px;
+        margin: 0px auto; }
+
+  .features-card {
+    width: 95%;
+    float: none;
+    margin: auto; }
+    .features-card div {
+      width: 50%;
+      height: auto;
+      float: left;
+      padding: 0;
+      margin: 10px auto; }
+
+  .contact {
+    margin: 70px 0; }
+    .contact .contact-cards {
+      float: none;
+      width: 100%;
+      margin: 0 auto; }
+      .contact .contact-cards .contactcardsdiv {
+        width: 38%;
+        padding: 30px; }
+    .contact .contact-cards::after {
+      content: "";
+      display: block;
+      clear: both; }
+
+  .contact-form {
+    width: 94%;
+    float: none;
+    margin: 0 auto; }
+    .contact-form .form {
+      margin-left: 32px; }
+      .contact-form .form .submit {
+        margin: 0 33%; }
+    .contact-form .textinput {
+      width: 40%;
+      margin-left: 8px; } }
+
+/*# sourceMappingURL=style.css.map */

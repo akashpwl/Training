@@ -1,0 +1,100 @@
+$blue: #4680ff;
+$black: #373a3c;
+$gray: #ecf0f5;
+$green: #9ccc65;
+$light-gray: #e2e5e8;
+$red: #ff5252;
+$white: #fff;
+$yellow: #ffba57;
+body {
+  background: $blue;
+  color: $black;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  position: relative;
+}
+
+.border-round {
+  border-radius: 50%;
+  width: 50px;
+}
+.t-white {
+  color: $white;
+}
+.bg-gray {
+  background-color: $gray;
+}
+
+.bg-c-green {
+  background-color: $green;
+}
+.top-mg {
+  top: -3em;
+}
+.overflow-x {
+  overflow-x: auto;
+}
+.bg-c-yellow {
+  background-color: $yellow;
+}
+.text-c-yellow {
+  color: $yellow;
+}
+.text-c-red {
+  color: $red;
+}
+.block-quote {
+  border-left: 0.25rem solid $light-gray;
+  padding: 0.5rem 1rem;
+}
+.bg-c-blue {
+  background-color: $blue;
+}
+.icon-opacity {
+  opacity: 0.5;
+}
+.f-13 {
+  font-size: 13px;
+}
+.f-20 {
+  font-size: 20px;
+}
+.f-14 {
+  font-size: 14px;
+}
+.f-18 {
+  font-size: 18px;
+}
+.f-72 {
+  font-size: 72px;
+}
+.font-w-400 {
+  font-weight: 400;
+}
+.m-top-1 {
+  margin-top: 1.5em;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+  color: $white;
+}
+.review-hover:hover {
+  background-color: $light-gray;
+}
+.gutters-negative {
+  margin-left: -20px;
+  margin-right: -20px;
+  padding-top: 2em;
+}
+.align-midle th,
+.align-midle td {
+  vertical-align: middle;
+}
+.table td {
+  white-space: nowrap;
+}
+
+@media (max-width: 768.98px) {
+  .m-top {
+    margin-top: 1.5em;
+  }
+}

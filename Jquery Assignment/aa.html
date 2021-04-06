@@ -1,0 +1,266 @@
+let API_KEY = "AIzaSyAVFtvuebZjEx_y6TVOX-ilqy5l_GiCmJQ";
+let API_URL = "https://www.googleapis.com/youtube/v3";
+let searchQuery = "";
+$(document).ready(function () {
+  function home(query = "") {
+    searchQuery = query;
+    $.ajax({
+      type: "GET",
+      url: `${API_URL}/search`,
+      data: {
+        key: API_KEY,
+        q: query,
+        regionCode: "IN",
+        part: "snippet",
+        maxResults: 10,
+        relevanceLanguage: "hi",
+        type: "video",
+        videoSyndicated: true,
+        videoEmbeddable: true,
+      },
+      success: function (data) {
+        let vidIdArray = data.items
+          .map(function (item) {
+            return item.id.videoId;
+          })
+          .join(",");
+
+        let channelIdArray = data.items
+          .map(function (item) {
+            return item.snippet.channelId;
+          })
+          .join(",");
+        console.log(data.items);
+        getVideoData(data, vidIdArray, channelIdArray);
+      },
+      error: function (response) {
+        console.log(response.responseJSON.error.errors[0].reason);
+      },
+    });
+  } // end home()
+
+  home(); // function Call
+
+  function getVideoData(searchDataSnippet, vidIdArray, channelIdArray) {
+    $.ajax({
+      type: "GET",
+      url: `${API_URL}/videos`,
+      data: {
+        key: API_KEY,
+        id: vidIdArray,
+        part: "statistics,snippet,contentDetails",
+      },
+      success: function (vidData) {
+        getChannelData(searchDataSnippet, vidData, channelIdArray);
+      },
+      error: function (response) {
+        console.log("Request Failed");
+      },
+    });
+  }
+
+  function getChannelData(searchDataSnippet, vidData, channelIdArray) {
+    $.ajax({
+      type: "GET",
+      url: `${API_URL}/channels`,
+      data: {
+        key: API_KEY,
+        id: channelIdArray,
+        part: "snippet",
+      },
+      success: function (channelData) {
+        console.log(channelData);
+
+        if (searchQuery) {
+          showSearchResults(searchDataSnippet, vidData, channelData);
+        } else {
+          showCards(searchDataSnippet, vidData, channelData);
+        }
+      },
+      error: function (response) {
+        console.log("Request Failed");
+      },
+    });
+  }
+
+  function showCards(data, videoInfo, channelData) {
+    for (let i = 0; i < data.items.length; i++) {
+      let cardHtml = `<div  class="w-23 mb-2 mx-2 ">
+    <div class="card border-0 text-dark">
+    <a href="playvideo.html?vid=${data.items[i].id.videoId}&cid=${
+        data.items[i].snippet.channelId
+      }" class="stretched-link"></a>
+      <img
+        class="card-img"
+        src="${data.items[i].snippet.thumbnails.high.url}"
+
+        alt="..."
+      />
+      <div class="align-end text-white">
+        <span class="card-text bg-dark">${convertDuration(
+          videoInfo.items[i].contentDetails.duration
+        )}</span>
+      </div>
+    </div>
+    <div class="card-body p-0">
+      <div class="row">
+        <div class="col-2">
+          <img
+            class="border-round"
+            src="${channelData.items[i].snippet.thumbnails.default.url}"
+            alt=""
+          />
+        </div>
+        <div class="col-8 p-0">
+          <h6 class="mb-0 block-with-text">
+          ${data.items[i].snippet.title}
+          <h6>
+          <a href="playvideo.html?vid=${data.items[i].id.videoId}&cid=${
+        data.items[i].snippet.channelId
+      }" class="stretched-link"></a>
+          <p class="text-muted mb-0">
+            ${data.items[i].snippet.channelTitle}
+          </p>
+          <p class="text-muted word-nowarp"> ${viewsConversion(
+            videoInfo.items[i].statistics.viewCount
+          )} • ${timeDifference(data.items[i].snippet.publishTime)}</p>
+        </div>
+        <div class="col-1 text-right px-0">
+          <i class="fas fa-ellipsis-v more-icon"></i>
+        </div>
+      </div>
+    </div>
+  </div>`;
+
+      $("#videoCards").append(cardHtml);
+    }
+  }
+
+  function showSearchResults(data, videoInfo, channelData) {
+    $("#searchVideoCards").empty();
+    for (let i = 0; i < 10; i++) {
+      let cardHtml = ` <div  class="row" onclick="videoPlay('hii')" >
+      <div class="ml-5 col-xl-4">
+        <img
+          class="thumbnail-img"
+          src="${videoInfo.items[i].snippet.thumbnails.standard.url}"
+          alt=""
+        />
+        <div class="align-duration text-white">
+          <span class="card-text bg-dark">${convertDuration(
+            videoInfo.items[i].contentDetails.duration
+          )}</span>
+        </div>
+      </div>
+      <div class="col-xl-7 pl-0 pt-1">
+        <h5 class="mb-0">
+        ${data.items[i].snippet.title}
+        </h5>
+        <p class="pt-0 mt-0 text-muted text-small f-15">
+        ${viewsConversion(
+          videoInfo.items[i].statistics.viewCount
+        )} •  ${timeDifference(data.items[i].snippet.publishTime)}
+        </p>
+        <div>
+          <img
+            class="border-round"
+            src="${channelData.items[i].snippet.thumbnails.default.url}"
+            alt=""
+          />
+
+          <span class="text-muted ml-2 f-15">  ${
+            data.items[i].snippet.channelTitle
+          }</span>
+        </div>
+        <p class="block-with-text mt-3">
+        ${data.items[i].snippet.description}
+        </p>
+      </div>
+
+    </div>`;
+
+      $("#searchVideoCards").append(cardHtml);
+    }
+  }
+
+  $("#searchBtn").click(function () {
+    $("#videoCards").css("display", "none");
+    let input = $("#searchInput").val();
+    if (input) {
+      home(input);
+    }
+  });
+
+  $("#youtube-logo").click(function () {
+    $("#searchVideoCards").css("display", "none");
+    $("#videoCards").css("display", "flex");
+    home();
+  });
+});
+
+function timeDifference(previousDate) {
+  let current = new Date();
+  let previous = new Date(previousDate);
+  let msPerMinute = 60 * 1000;
+  let msPerHour = msPerMinute * 60;
+  let msPerDay = msPerHour * 24;
+  let msPerMonth = msPerDay * 30;
+  let msPerYear = msPerDay * 365;
+
+  let elapsed = current - previous;
+
+  if (elapsed < msPerMinute) {
+    return Math.round(elapsed / 1000) + " seconds ago";
+  } else if (elapsed < msPerHour) {
+    return Math.round(elapsed / msPerMinute) + " minutes ago";
+  } else if (elapsed < msPerDay) {
+    return Math.round(elapsed / msPerHour) + " hours ago";
+  } else if (elapsed < msPerMonth) {
+    return Math.round(elapsed / msPerDay) + " day ago";
+  } else if (elapsed < msPerYear) {
+    return Math.round(elapsed / msPerMonth) + " month ago";
+  } else {
+    return Math.round(elapsed / msPerYear) + " year ago";
+  }
+}
+
+function viewsConversion(views) {
+  if (views >= 1000000) {
+    return Math.round(views / 1000000) + "M views";
+  } else if (views >= 1000) {
+    return Math.round(views / 1000) + "K views";
+  }
+
+  return views + " views";
+}
+function convertDuration(yt_duration) {
+  let duration = "";
+  const time_extractor = /([0-9]*H)?([0-9]*M)?([0-9]*S)?$/;
+  const extracted = time_extractor.exec(yt_duration);
+  const hours = parseInt(extracted[1], 10) || 0;
+  const minutes = parseInt(extracted[2], 10) || 0;
+  let seconds = parseInt(extracted[3], 10) || 0;
+  if (hours) {
+    duration = hours + ":";
+  }
+  if (seconds < 10) seconds = "0" + seconds;
+  duration += minutes + ":" + seconds;
+  return duration;
+}
+
+function mapping(se,ch){
+
+  let temp = [];
+	let searchTemp = se.map(function(it){
+     	 let charr=ch.filter(function(el){
+         	if(it.snippet.channelId==el.id){
+            	return true;
+            }
+         });
+      	let obj={};
+      	obj.search= it;
+      	obj.channel= charr[0];
+      	temp.push(obj);
+    });
+
+}

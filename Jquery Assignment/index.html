@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youtube</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" href="./assets/img/yt-icon.png" type="image/icon type" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/5a3881f422.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="./assets/script/script.js"></script>
+  </head>
+  <body>
+    <header class="mobile-header">
+      <div id="mobSearchHeader" class="row justify-content-between">
+        <div class="col-4 pt-1 logo-img text-md-left">
+          <img
+            style="height: 40px"
+            class=""
+            src="./assets/img/Youtube-Logo.png"
+            alt=""
+          />
+          <a href="index.html" class="stretched-link"></a>
+        </div>
+        <div class="col-4 p-top-10 text-right">
+          <i id="mobileSearchIcon" class="fas fa-search text-secondary"></i>
+          <img
+            class="border-round ml-4"
+            src="https://in.bmscdn.com/iedb/artist/images/website/poster/large/ranbir-kapoor-2817-14-09-2017-01-46-00.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="row" id="mobSearchBar">
+        <div class="col-1">
+          <i id="mobBackIcon" class="fas fa-arrow-left"></i>
+        </div>
+        <div class="col-9">
+          <input
+            type="text"
+            class="mobSearchInput"
+            name=""
+            id="mobSearchInput"
+          />
+        </div>
+        <div class="col-1">
+          <button class="btn" id="mobSearchIcon" type="button">
+            <i class="fas fa-search text-secondary"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <header class="mt-3 webview-header">
+      <div class="row justify-content-around">
+        <div class="col-lg-2 pl-0 margin-left pt-1">
+          <div class="row ml-2">
+            <div class="col-3 pl-0">
+              <div class="col">
+                <i class="fas fa-bars menu-bar"></i>
+              </div>
+            </div>
+            <div class="col yt-icon-position">
+              <img
+                id="youtube-logo"
+                class="yt-icon-size"
+                src="./assets/img/Youtube-Logo.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <form class="form row justify-content-start">
+            <div class="col-9 pr-0">
+              <input
+                id="searchInput"
+                class="form-control rounded-0"
+                type="search"
+                placeholder="Search"
+              />
+            </div>
+            <div class="col-2 pl-0">
+              <button
+                id="searchBtn"
+                class="btn- my-2 my-sm-0 search-btn-width"
+                type="button"
+              >
+                <i class="fas fa-search"></i>
+              </button>
+              <span class="align-middle pl-3">
+                <i class="fas fa-microphone f-20"></i>
+              </span>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-lg-2">
+          <div class="row position-top">
+            <div class="col">
+              <img src="./assets/img/create-icon.png" alt="" />
+            </div>
+            <div class="col">
+              <img src="./assets/img/menu-icon.png" alt="" />
+            </div>
+            <div class="col">
+              <i class="fas fa-bell align-middle f-22"></i>
+            </div>
+            <div class="col">
+              <img
+                class="border-round"
+                src="https://in.bmscdn.com/iedb/artist/images/website/poster/large/ranbir-kapoor-2817-14-09-2017-01-46-00.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <hr class="mb-2 mt-0" />
+    <div class="main">
+      <div class="sidebar">
+        <div class="flex-dir">
+          <div class="col-3 pb-20">
+            <i class="fas fa-home f-28 pl-2 text-danger"></i>
+            <p class="f-10 pl-2">Home</p>
+          </div>
+          <div class="col-3 pb-20">
+            <i class="fas fa-compass f-28 pl-2"></i>
+            <p class="f-10 pl-1">Explore</p>
+          </div>
+          <div class="col-3 pb-20">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              fill="currentColor"
+              class="bi bi-collection-play-fill m-subscription"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zm6.258-6.437a.5.5 0 0 1 .507.013l4 2.5a.5.5 0 0 1 0 .848l-4 2.5A.5.5 0 0 1 6 12V7a.5.5 0 0 1 .258-.437z"
+              />
+            </svg>
+            <p class="f-10 m-subscription-p">Subscriptions</p>
+          </div>
+          <div class="col-3 pb-20">
+            <img
+              class="lib-icon ml-1"
+              src="./assets/img/library-icon.png"
+              alt=""
+            />
+            <p class="f-10 lib-icon text-al-center">Library</p>
+          </div>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="row">
+          <div class="col topics">
+            <span class="category bg-dark text-white">All</span>
+            <span class="category">Software</span>
+            <span class="category">Web Development</span>
+            <span class="category">Front End</span>
+            <span class="category">Bootstrap</span>
+            <span class="category">Backend</span>
+            <span class="category">Node</span>
+            <span class="category">Express</span>
+            <span class="category">mongoDB</span>
+            <span class="category">Algorithms</span>
+            <span class="category">Javascript</span>
+            <span class="category">React</span>
+          </div>
+        </div>
+        <hr class="mt-2 d-none d-xl-block" />
+        <div id="videoCards" class="row videoCards no-gutters"></div>
+        <div id="searchVideoCards" class="row"></div>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <div class="row align-items-end">
+        <div class="col-3 text-center">
+          <i class="fas fa-home f-28 text-danger"></i>
+          <p class="f-10 mb-0">Home</p>
+        </div>
+        <div class="col-3 text-center explore-pos">
+          <img src="./assets/img/icons8-fire-26.png" alt="" />
+          <p class="f-10 mb-0">Explore</p>
+        </div>
+        <div class="col-3 text-center">
+          <img
+            style="width: 31px; height: 28px"
+            src="./assets/img/play-icon.png"
+            alt=""
+          />
+          <p class="f-10 mb-0">Subscriptions</p>
+        </div>
+        <div class="col-3 text-center">
+          <img
+            class=""
+            style="width: 31px; height: 28px"
+            src="./assets/img/yt-library.png"
+            alt=""
+          />
+          <p class="f-10 mb-0 text-al-center">Library</p>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

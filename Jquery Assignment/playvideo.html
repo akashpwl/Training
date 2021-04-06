@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youtube</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/5a3881f422.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" href="./assets/img/yt-icon.png" type="image/icon type" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="./assets/script/playScript.js"></script>
+  </head>
+  <body>
+    <header class="mobile-header">
+      <div class="row justify-content-between">
+        <div class="col-4 pt-1 logo-img text-md-left">
+          <img
+            style="height: 40px"
+            class=""
+            src="./assets/img/Youtube-Logo.png"
+            alt=""
+          />
+          <a href="index.html" class="stretched-link"></a>
+        </div>
+        <div class="col-4 p-top-10 text-right">
+          <i class="fas fa-search text-secondary"></i>
+          <img
+            class="border-round ml-4"
+            src="https://in.bmscdn.com/iedb/artist/images/website/poster/large/ranbir-kapoor-2817-14-09-2017-01-46-00.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+    </header>
+
+    <header class="mt-3 webview-header">
+      <div class="row justify-content-around">
+        <div class="col-lg-2 pl-0 margin-left pt-1">
+          <div class="row ml-2">
+            <div class="col-3 pl-0">
+              <div class="col">
+                <i
+                  style="font-size: 22px; vertical-align: bottom"
+                  class="fas fa-bars"
+                ></i>
+              </div>
+            </div>
+            <div class="col yt-icon-position">
+              <img
+                id="youtube-logo"
+                style="width: 115px; height: 52px"
+                src="./assets/img/Youtube-Logo.png"
+                alt=""
+              />
+              <a href="index.html" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <form class="form row justify-content-start">
+            <div class="col-9 pr-0">
+              <input
+                id="searchInput"
+                class="form-control"
+                type="search"
+                placeholder="Search"
+              />
+            </div>
+            <div class="col-2 pl-0">
+              <button
+                id="searchBtn"
+                class="btn btn-outline-secondary my-2 my-sm-0 search-btn-width"
+                type="button"
+              >
+                <i class="fas fa-search"></i>
+              </button>
+              <span class="align-middle pl-3">
+                <i style="font-size: 20px" class="fas fa-microphone"></i>
+              </span>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-lg-2">
+          <div class="row position-top">
+            <div class="col">
+              <img src="./assets/img/create-icon.png" alt="" />
+            </div>
+            <div class="col">
+              <img src="./assets/img/menu-icon.png" alt="" />
+            </div>
+            <div class="col">
+              <i style="font-size: 22px" class="fas fa-bell align-middle"></i>
+            </div>
+            <div class="col">
+              <img
+                class="border-round"
+                src="https://in.bmscdn.com/iedb/artist/images/website/poster/large/ranbir-kapoor-2817-14-09-2017-01-46-00.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div id="videoPlayer" class="row ml-xl-4 mt-3">
+      <div class="col-12 col-xl-8">
+        <iframe id="iframePlayer" src=""> </iframe>
+      </div>
+      <div class="col-12 col-xl-8 mt-3">
+        <h5 id="title" class="vid-title"></h5>
+        <div class="row">
+          <div class="col-xl-6 f-12 text-muted">
+            <span id="viewCount"> </span> views •&nbsp;<span
+              id="publishDate"
+            ></span>
+          </div>
+          <div class="col-xl-6 text-center text-xl-right video-stats">
+            <div class="row">
+              <div class="col no-warp">
+                <i
+                  style="font-size: 24px; color: #808080"
+                  class="fas fa-thumbs-up"
+                ></i>
+
+                <span id="likeCount" class=""></span>
+              </div>
+              <div class="col no-warp">
+                <i
+                  style="
+                    font-size: 24px;
+                    vertical-align: text-top;
+                    color: #808080;
+                  "
+                  class="fas fa-thumbs-down"
+                ></i>
+                <span id="dislikeCount" class=""></span>
+              </div>
+              <div class="col no-warp">
+                <i
+                  style="font-size: 24px; color: #808080"
+                  class="fas fa-share"
+                ></i>
+                <span id="share" class="">SHARE</span>
+              </div>
+              <div class="col no-warp">
+                <img src="./assets/img/save-icon.png" alt="" />&nbsp;
+                <span id="save" class="">SAVE</span>
+              </div>
+              <div class="col ellipsis">
+                <i
+                  style="font-size: 21px; color: #808080"
+                  class="fas fa-ellipsis-h"
+                ></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr />
+      </div>
+      <div class="col-xl-8">
+        <div class="row">
+          <div class="col-2 col-md-1">
+            <img
+              id="channelThumbnail"
+              class="border-round-channel pr-0"
+              src=""
+              alt=""
+            />
+          </div>
+          <div class="col-6 col-xl-9">
+            <p class="mb-0">
+              <b id="channelTitle" class="f-14"></b>
+            </p>
+            <p id="subscriber" class="mt-0 f-12">subscribers</p>
+            <p class="description" id="description"></p>
+            <button class="btn" id="showMore">SHOW MORE</button>
+          </div>
+          <div class="col-4 text-right col-xl-2">
+            <button class="btn btn-danger px-xl-3 mob-d-none">SUBSCRIBE</button>
+            <button class="text-danger d-xl-none border-0 bg-white">
+              SUBSCRIBE
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
